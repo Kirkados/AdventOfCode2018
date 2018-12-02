@@ -1,6 +1,6 @@
 #%% Part 1
 
-filename = 'Dec1_1_input.txt'
+filename = 'Dec1_input.txt'
 
 file = open(filename, 'r')
 
