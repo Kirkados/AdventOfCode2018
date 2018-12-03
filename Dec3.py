@@ -2,6 +2,7 @@
 # How many square inches overlap?
 
 import numpy as np
+import time
 
 filename = 'Dec3_input.txt'
 
@@ -33,7 +34,7 @@ for i in range(len(input)):
     this_section_locations = [data[i][1] + [l for l in range(data[i][3])], data[i][2] + [l for l in range(data[i][4])]]
     locations.append(this_section_locations)
     
-    
+start_time = time.time()
 overlapped_locations = []
 overlap = 0
 # Scan for overlaps    
@@ -74,4 +75,6 @@ for i in range(len(locations)):
                                 overlap += 1
                                 print("overlapped")
                                 overlapped_locations.append([locations[i][0][x], locations[i][1][y]])
-        print("i = %i, j = %i" %(i,j))
+    print("i = %i" %(i))
+
+print("Done! It took %.1f s and we found %i overlapping square inches!" %(time.time() - start_time, overlap))
