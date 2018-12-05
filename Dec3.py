@@ -41,7 +41,7 @@ overlap = 0
 for i in range(len(locations)):
     
     # For all other pieces of fabric
-    for j in range(i, len(locations)):
+    for j in range(i+1, len(locations)):
         
         # Could check if these boxes are remotely overlapping, but I'll skip that and go more brute-force
         
@@ -63,9 +63,8 @@ for i in range(len(locations)):
                             count_it = True 
                             
                             # Before counting it, need to check if this location has been overlapped in the past (because overlap only counts once)
-                            for m in range(len(overlapped_locations)):
                                 
-                                if [locations[i][0][x], locations[i][1][y]] == overlapped_locations[m]:
+                            if [locations[i][0][x], locations[i][1][y]] in overlapped_locations:
                                     
                                     # This point has already been counted
                                     count_it = False
