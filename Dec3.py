@@ -73,7 +73,7 @@ for i in range(len(locations)):
                             
                             if count_it:
                                 overlap += 1
-                                print("overlapped")
+                                #print("overlapped")
                                 overlapped_locations.append([locations[i][0][x], locations[i][1][y]])
     print("i = %i" %(i))
 
